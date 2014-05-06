@@ -4,7 +4,8 @@
   "main": "lib/store.js",
   "description": "A simple key:value store that supported dotted anotation",
   "scripts": {
-    "test": "grunt do:coverage"
+    "test": "grunt do:coverage",
+    "prepublish": "grunt clean && grunt src"
   },
   "repository": "loicmahieu/dottystore",
   "bugs": {
