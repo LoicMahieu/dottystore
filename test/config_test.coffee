@@ -50,14 +50,14 @@ describe 'Config::set', ->
   before ->
     config = getStore()
 
-  testWrite = (prop, value, equality, called = 1) ->
+  testWrite = (prop, value, equality, called = 1, forceUpdate) ->
     spy = chai.spy (data) -> equality(data)
     config.once("updated.#{prop}", spy)
 
     _save = config._save
     config._save = chai.spy config._save
 
-    config.set(prop, value)
+    config.set(prop, value, forceUpdate)
 
     if called
       expect(spy).to.have.been.called(called)
@@ -84,6 +84,17 @@ describe 'Config::set', ->
 
   it 'Can get a boolean', ->
     testWrite('foobar', true, (v) -> expect(v).to.be.equals(true))
+
+  describe 'ForceUpdate', ->
+    it 'Do not trigger save if set the same object', ->
+      obj = {'foo': 'bar'}
+      testWrite('obj', obj, (v) -> expect(v).to.deep.equals({'foo': 'bar'}))
+      testWrite('obj', obj, ((v) -> expect(v).to.deep.equals({'foo': 'bar'})), 0)
+
+    it 'Trigger save if set the same object if forceUpdate = true', ->
+      obj = {'foo': 'bar'}
+      testWrite('obj', obj, (v) -> expect(v).to.deep.equals({'foo': 'bar'}))
+      testWrite('obj', obj, ((v) -> expect(v).to.deep.equals({'foo': 'bar'})), 1, true)
 
 
 describe 'config::toggle', ->

@@ -23,10 +23,10 @@ class Store extends EventEmitter
       return dotty.get(@_defaults, key)
     return val
 
-  set: (key, value) ->
+  set: (key, value, forceUpdate = false) ->
     old = @get key
     edited = dotty.put @_data, key, value
-    if old != value
+    if forceUpdate or old != value
       @_update(key, value)
     return edited
 
