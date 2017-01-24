@@ -1,5 +1,7 @@
 # SimpleStore
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/LoicMahieu/dottystore.svg)](https://greenkeeper.io/)
+
 A simple key:value store that supported dotted anotation thanks to [dotty](https://github.com/deoxxa/dotty).
 
 ## Installation
@@ -37,5 +39,5 @@ grunt test
 ## Contribution
 
 Feel free to [file issues](https://github.com/loicmahieu/dottystore/issues) and submit
-[pull requests](https://github.com/loicmahieu/dottystore/pulls) — contributions are
+[pull requests](https://github.com/loicmahieu/dottystore/pulls) â€” contributions are
 welcome.
