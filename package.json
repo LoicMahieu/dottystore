@@ -1,6 +1,6 @@
 {
   "name": "dottystore",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "lib/store.js",
   "types": "./lib/store.d.ts",
   "description": "A simple key:value store that supported dotted anotation",
