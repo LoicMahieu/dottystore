@@ -2,11 +2,17 @@
   "name": "dottystore",
   "version": "0.0.2",
   "main": "lib/store.js",
+  "types": "./lib/store.d.ts",
   "description": "A simple key:value store that supported dotted anotation",
   "scripts": {
-    "test": "grunt do:coverage",
-    "prepublish": "grunt clean && grunt src"
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint -p .",
+    "prepare": "npm run build"
   },
+  "files": [
+    "lib/*"
+  ],
   "repository": "loicmahieu/dottystore",
   "bugs": {
     "url": "https://github.com/loicmahieu/dottystore/issues"
@@ -20,25 +26,18 @@
   "author": "Loic Mahieu <mahieuloic@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^1.9.1",
-    "chai-fs": "0.0.3",
-    "chai-spies": "^0.5.1",
-    "grunt": "^0.4.4",
-    "grunt-coffeelint": "0.0.10",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-coffee": "^0.10.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-env": "^0.4.1",
-    "grunt-istanbul": "^0.2.5",
-    "grunt-istanbul-coverage": "0.0.5",
-    "grunt-mocha-test": "^0.10.2",
-    "grunt-open": "^0.2.3",
-    "grunt-release": "^0.7.0",
-    "load-grunt-tasks": "^0.4.0"
+    "@types/dot-prop": "^4.2.0",
+    "@types/events": "^1.2.0",
+    "@types/jest": "^23.3.2",
+    "@types/lodash": "^4.14.116",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
   },
   "dependencies": {
-    "dotty": "0.0.2",
-    "lodash": "^2.4.1"
+    "dot-prop": "^4.2.0",
+    "events": "^3.0.0",
+    "lodash": "^4.17.11"
   }
 }

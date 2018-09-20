@@ -1,6 +1,6 @@
 # SimpleStore
 
-A simple key:value store that supported dotted anotation thanks to [dotty](https://github.com/deoxxa/dotty).
+A simple key:value store that supported dotted anotation thanks to [dot-prop](https://github.com/sindresorhus/dot-prop).
 
 ## Installation
 
@@ -13,15 +13,15 @@ npm install dottystore
 Reference in your program:
 
 ```js
-var Store = require('dottystore');
+const { Store } = require('dottystore')
 ```
 
 ## Usage
 
 ```js
-var store = new Store();
+const store = new Store()
 
-store.set('some.value', true);
+store.set('some.value', true)
 console.log(store.get('some.value')) // == true
 ```
 
@@ -31,11 +31,11 @@ console.log(store.get('some.value')) // == true
 git clone git@github.com/loicmahieu/dottystore.git
 cd dottystore
 npm install
-grunt test
+npm test
 ```
 
 ## Contribution
 
 Feel free to [file issues](https://github.com/loicmahieu/dottystore/issues) and submit
-[pull requests](https://github.com/loicmahieu/dottystore/pulls) — contributions are
+[pull requests](https://github.com/loicmahieu/dottystore/pulls) ï¿½ contributions are
 welcome.
