@@ -37,5 +37,5 @@ npm test
 ## Contribution
 
 Feel free to [file issues](https://github.com/loicmahieu/dottystore/issues) and submit
-[pull requests](https://github.com/loicmahieu/dottystore/pulls) � contributions are
+[pull requests](https://github.com/loicmahieu/dottystore/pulls) - contributions are
 welcome.
